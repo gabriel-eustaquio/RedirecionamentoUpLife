@@ -1,0 +1,229 @@
+@import url("./variaveis.css");
+
+/* Estilos gerais */
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Estilos do header + menu */
+
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+header span {
+  font: var(--font-span-20);
+  padding: var(--padding-20);
+  color: var(--cor-principal-1);
+  grid-column: 1/-1;
+  text-align: right;
+}
+
+header .menu {
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/-1;
+  align-items: center;
+  padding: var(--padding-20);
+  background-color: var(--cor-base-1);
+}
+
+@media (max-width: 850px) {
+  header span {
+    font: var(--font-16);
+  }
+}
+
+/* Estilos dos cards para redirecionametos*/
+
+main h1 {
+  font: var(--font-46);
+  text-align: center;
+  padding: var(--padding-24);
+  color: var(--cor-base-2);
+}
+
+main .cards-redirecionamento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-10);
+  align-items: end;
+  padding-bottom: var(--padding-120);
+}
+
+main .cards-redirecionamento li {
+  padding-bottom: var(--padding-24);
+}
+
+main .cards-redirecionamento div {
+  width: 90%;
+  height: 200px;
+  padding: var(--padding-20);
+}
+
+main .cards-redirecionamento img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding-bottom: var(--padding-24);
+  border-radius: 4px;
+}
+
+main .cards-redirecionamento #card-1 div,
+main .cards-redirecionamento #card-2 div,
+main .cards-redirecionamento #card-3 div {
+  display: flex;
+  flex-direction: column;
+}
+
+main .cards-redirecionamento #card-1 {
+  background-color: var(--cor-principal-2);
+  border-radius: 4px;
+}
+
+main .cards-redirecionamento #card-2 {
+  background-color: var(--cor-principal-3);
+  border-radius: 4px;
+}
+
+main .cards-redirecionamento #card-3 {
+  background-color: var(--cor-principal-4);
+  border-radius: 4px;
+}
+
+main h2,
+main p,
+main a {
+  text-align: center;
+  color: var(--cor-font);
+}
+
+main h2 {
+  font: var(--font-21);
+  padding-bottom: var(--padding-10);
+}
+
+main p {
+  font: var(--font-16);
+  padding-bottom: var(--padding-24);
+}
+
+main a {
+  display: grid;
+  text-decoration: none;
+  color: var(--cor-font);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: var(--padding-20);
+  text-transform: uppercase;
+  font-weight: bold;
+  font: var(--font-21);
+  border-radius: 4px;
+}
+
+@media (max-width: 850px) {
+  main h1 {
+    font-size: 40px;
+    padding-top: var(--padding-24);
+    padding-bottom: 0px;
+  }
+
+  main .cards-redirecionamento {
+    grid-template-columns: 1fr;
+    padding-right: var(--padding-10);
+    padding-left: var(--padding-10);
+  }
+}
+
+/* Rodapé do site */
+
+.footer-bg {
+  background-color: var(--cor-base-1);
+}
+
+footer {
+  padding: var(--padding-48);
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  padding-bottom: var(--padding-48);
+}
+
+footer div {
+  display: grid;
+  justify-content: center;
+}
+
+footer div p {
+  text-align: center;
+  font: var(--font-16);
+}
+
+/* Detalhe final ;) */
+
+.detalhe-desenvolvedor {
+  display: block;
+  text-align: center;
+  padding-top: var(--padding-20);
+  font: var(--font-16);
+}
+
+/* Estilos e configurações para utilizar botão mobile */
+
+button {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  button {
+    display: block;
+    border: none;
+    background-color: none;
+    border-top: 4px solid var(--cor-principal-1);
+    cursor: pointer;
+  }
+  button::before,
+  button::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: var(--cor-principal-1);
+    margin-top: 5px;
+  }
+  header ul {
+    position: relative;
+  }
+  header ul li:last-child {
+    opacity: 0;
+    position: absolute;
+    top: 120px;
+    right: 0px;
+    width: 100%;
+    text-align: right;
+    padding-right: var(--padding-10);
+    background-color: var(--cor-base-1);
+    height: 0px;
+    overflow: hidden;
+  }
+  .redes.ativa {
+    opacity: 1;
+    height: 40px;
+    transition: height 1s;
+  }
+}
